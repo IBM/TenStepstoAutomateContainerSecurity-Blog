@@ -85,6 +85,6 @@ Finally, automated alerting, response, and forensic capture can be initiated for
 
 Now you are ready to dive into the details.  Read on!
 
-* [Automating Container Security Into the CI/CD Pipeline](https://github.ibm.com/ibm-developer-eti-ai-analytics/TenStepstoAutomateContainerSecurity-Pt1)
+* [Automating Container Security Into the CI/CD Pipeline](https://github.com/IBM/automating-container-security)
 
 
