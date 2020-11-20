@@ -80,8 +80,6 @@ Containers and hosts should be continuously monitored for suspicious and unautho
 
 Finally, automated alerting, response, and forensic capture can be initiated for suspicious activity. These should include quarantine of containers, packet captures, and custom notifications to case management systems.
 
-<img src="./images/10Steps.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
-
 
 Now you are ready to dive into the details.  Read on!
 
