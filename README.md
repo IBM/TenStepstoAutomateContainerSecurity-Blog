@@ -10,7 +10,7 @@ The critical infrastructure such as the container orchestrator Kubernetes, run-t
 
 New cloud-native tools such as registries, orchestrators (Kubernetes), service meshes and other open source tools introduce new attack surfaces that are not known to either security or DevOps teams. New concepts such as **infrastructure as code** and **security policy as code** will require collaboration between DevOps and security teams in order to enable automation of pipelines in a secure environment. 
 
-To implement a layered security approach for containers, start from the 'left-side,’ of development with vulnerability and compliance scanning. Then, progress to the right with real-time network, container, and host protections. Vulnerability scanning without virtual patching will overwhelm teams with non-actionable data, and run-time security without vulnerability and compliance management in the pipeline will increase the risk of damaging attacks penetrating the production environment.  This blog introduces an article 2-part series that discusses security issues facing DevOps and security teams and identifies ten integration points where container security can be automated into the pipeline.
+To implement a layered security approach for containers, start from the 'left-side,’ of development with vulnerability and compliance scanning. Then, progress to the right with real-time network, container, and host protections. Vulnerability scanning without virtual patching will overwhelm teams with non-actionable data, and run-time security without vulnerability and compliance management in the pipeline will increase the risk of damaging attacks penetrating the production environment.  This blog introduces an article that discusses security issues facing DevOps and security teams and identifies ten integration points where container security can be automated into the pipeline.
 
 
 ## The CI/CD Pipeline Attack Surface
@@ -83,13 +83,8 @@ Finally, automated alerting, response, and forensic capture can be initiated for
 <img src="./images/10Steps.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
 
-Now you are ready to dive into the details.  Again, this is an introduction to a 2 part-series:
+Now you are ready to dive into the details.  Read on!
 
-* [Automating Container Security Into the CI/CD Pipeline - DEVOPS Point of View](https://github.ibm.com/ibm-developer-eti-ai-analytics/TenStepstoAutomateContainerSecurity-Pt1)
+* [Automating Container Security Into the CI/CD Pipeline](https://github.ibm.com/ibm-developer-eti-ai-analytics/TenStepstoAutomateContainerSecurity-Pt1)
 
-* [Automating Container Security Into the CI/CD Pipeline - Operations/Security Point of View](https://github.ibm.com/ibm-developer-eti-ai-analytics/TenStepstoAutomateContainerSecurity-Pt2)
-
-Want to learn more?
-
-**Add RELATED CONTENT**
 
