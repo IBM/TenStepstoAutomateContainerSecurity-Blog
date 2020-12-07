@@ -1,88 +1,50 @@
-# TenStepstoAutomateContainerSecurity-Blog
-NeuVector Blog
-
-## Introduction
+# Container Security requires more than securing your images
 
 
-Many of us have seen this scene play out several times over.  Customer financial records have been exposed, account numbers have been hacked.  Security and compliance in a modern-day cloud-native is not only a requirement it is a challenge to most developers at enterprise companies.  There are many different parts to a container-based workload.  As a result, this increases the attack surface of an application and its infrastructure. The increased attack surface of container infrastructures makes security even more important, however, security and DevOps teams can’t afford to slow the pipeline with manual processes.  It takes a broad array of cloud-native security capabilities to successfully integrate security into the CI/CD pipeline, including into the production environment.
+Many of us have seen this scene play out several times over.  Customer financial records have been exposed, account numbers have been hacked.  Security and compliance in a modern-day cloud-native is not only a requirement it is a challenge to most developers at enterprise companies.  
 
-The critical infrastructure such as the container orchestrator Kubernetes, run-time CRI-O or containerd, and supporting infrastructure such as registries are all attack surfaces. Hackers are only now seeing the explosion of containers in production as ripe targets to launch zero-day attacks. The rapid evolution and lack of widespread operational experience of the cloud-native tools means containers will not become battle-tested and attack resistant for many years.
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.  Containers are becoming increasingly prominent, especially in cloud environments.  There are several use cases for containers such as Microservices, DevOps, and application migration and modernization.  The benefits of using containers is outline in this [report](https://www.ibm.com/cloud/blog/the-benefits-of-containerization-and-what-it-means-for-you). Those benefits include:
 
-New cloud-native tools such as registries, orchestrators (Kubernetes), service meshes and other open source tools introduce new attack surfaces that are not known to either security or DevOps teams. New concepts such as **infrastructure as code** and **security policy as code** will require collaboration between DevOps and security teams in order to enable automation of pipelines in a secure environment. 
+* Portability between different platforms and clouds
 
-To implement a layered security approach for containers, start from the 'left-side,’ of development with vulnerability and compliance scanning. Then, progress to the right with real-time network, container, and host protections. Vulnerability scanning without virtual patching will overwhelm teams with non-actionable data, and run-time security without vulnerability and compliance management in the pipeline will increase the risk of damaging attacks penetrating the production environment.  This blog introduces an article that discusses security issues facing DevOps and security teams and identifies ten integration points where container security can be automated into the pipeline.
+* Efficiency through using far fewer resources than virtual machines and delivering higher utilization of compute resources
 
+* Agility that allows developers to integrate with their existing DevOps environment
 
-## The CI/CD Pipeline Attack Surface
+* Higher speed in the delivery of enhancements
 
-Before we look at automating container security, let’s understand why security is so critical to container and Kubernetes pipelines. From the beginning of the CI/CD pipeline into production, there are attack points where security can be comprised. The diagram below provides a summary of the most important critical security issues which keep DevOps and security teams awake at night.
+* Faster app start-up and easier scaling
 
+* Easier management
 
-<img src="./images/SecurityIssues.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
-
-
-#### Properly addressing these security concerns should be the primary focus for integrating security into the pipeline
-
-* **Critical Vulnerablities**: introduced in the build phase, registry and even in the production environment
-
-* **Security Breaks Pipeline**: adding manual steps for security reviews can slow or even stop the continuous integration and release of new or updated applications
-
-* **Misconfiguration**: Need constant auditing of configurations who avoid compromising security and exposing containers open to attacks
-
-* **New Attack Surfaces**: Hackers are only now seeing the explosion of containers in production as ripe targets to launch zero-
-day attacks. 
-
-* **Inadequate Protection in Production**: One needs to protect sensitive data or valuable assets with run-time security with deep network and endpoint (containers, host) protection
+* Improved security by isolating applications from the host system and from each other
 
 
-## 10 Steps to Container Security Automation - A Summary
+Even though one of the bullet notes that containers include “improved security”, containerizationintroduces potential security vulnerabilities that users must address.  As more and more development shops use containers; the complexity of managing the increased growth creates management complexity and security exposures. Security needs to be built into the container pipeline so containers ensure reliability, scalability and trust.
 
-In this series we’ll take a detailed look at ten integration points which can serve as a guide for 10 steps for container security automation. While there are many more than ten, these are highlighted as first steps because they are simple and impactful for improving security. Here’s a summary of these, followed by a pipeline reference diagram.
+What are the security implications of containers? Container security includes implementing security tools and policies to assure that your container is running as intended, including protection of infrastructure, software supply chain, and runtime. Container security needs to be continuous. Developers should be concerned with securing the
 
-1. **Build-Phase Scanning**
+* applications within the container
 
-Container images should be scanned for vulnerabilities and compliance violations during the build phase so the build step can be stopped (failed) in order to force correction or remediation. Integration is made easy through plug-ins and extensions for popular tools such as Jenkins, CircleCI, Azure DevOps, Gitlab, Bamboo etc.
+* build pipeline
 
-2. **Registry Scanning**
+* deployment environment
 
-After images pass build-phase scanning, they are staged into registries and should also be scanned there. New vulnerabilities can be discovered or introduced after images are pushed to registries. Registry scan results can also be linked to Admission Controls (see #7 below) to prevent unauthorized or vulnerable images from being deployed.
+* container management stack
 
-3. **Production Scanning, CIS Benchmarks & Compliance Auditing**
+* container host
 
-Scanning and auditing should extend into the staging and production environments with run-time vulnerability scans and running of CIS benchmarks for Kubernetes and Docker, as well as any custom compliance checks.
+* attack surface of the environment
 
-4. **Risk Reporting and Vulnerability Management**
+Security measures should be introduced as early as possible.  It should be a core component of the build and deployement stages in addition to the runttime period. Begin the security process by integrating into it into the development cycle. Next as the containers move towards deployment, container security ensures that the secured container has not been modified.  Finally, runtime monitoring of containers looks for any signs of hacking and allows for enforcement of policies that only allow authorized activity.  A developer's container platform should be designed to automatically and regularly scan and patch containers, ensuring these containers are always using the latest versions of their dependencies and libraries. This reduces the security risk exposed by the other code one's containers depend on. There are security tools available that solve the problem from build time, shift left, to run time.  Developers should address security across the entire container lifecycle. 
 
-Although addressing high risk environments and interpreting vulnerability management reports typically involve some manual review, alerting and correlation can be done automatically to speed and ease assessment and remediation.
+Enterprise DevOps and DevSecOps teams are typically the individuals responsible for ensuring container security and compliance. It is important that these teams don't slow down the container pipeline by securing containers with manual processes. Read NeuVector's [10 Steps to Automate Container Security into the CI/CD Pipeline](https://neuvector.com/learn/container-security-automation-guide/) to:
 
-5. **Security Policy as Code**
+* Learn about the top security concerns in the CI/CD pipeline
 
-Defining and deploying security rules for new applications can be automated as code in the same way that Kubernetes supports deployment manifests in standard yaml files. In this way, new or updated workloads are automatically protected as they are deployed to production.
+* Discover the 10 steps to start container security automation from build to ship to run
 
-6. **Application Behavioral Learning**
+* Evaluate who should be responsible for each automation step, and what techniques can be used for integration
 
-
-Behavioral learning is an important technique for automatically characterizing application behavior such as network connections, protocols used, processes required and file access activity allowed. We will see later how this can work together with Security Policy as Code (#5) to automate run-time security from dev to production.
-
-7. **Admission Controls**
-
-Admission controls are an important bridge between the CI/CD pipeline and the production environment. Once rules are established, vulnerable or unauthorized deployments can be automatically prevented.
-
-8. **Container Network Firewall**
-
-A layer 7 (application layer) container firewall will automatically enforce network segmentation by blocking network attacks and unauthorized connections. The creation and maintenance of these whitelist network rules can be automated as code (#5) utilizing behavioral learning (#6).
-
-9. **Container Workload & Host (Endpoint) Security**
-
-Containers and hosts should be continuously monitored for suspicious and unauthorized behavior such as processes and file activity. These activities can be automatically blocked. The creation and maintenance of these whitelist rules can be automated as code (#5) utilizing behavioral learning (#6).
-
-10. **Alerting, Response, and Forensics**
-
-Finally, automated alerting, response, and forensic capture can be initiated for suspicious activity. These should include quarantine of containers, packet captures, and custom notifications to case management systems.
-
-
-Now you are ready to dive into the details.  Read on!
-
-* [Automating Container Security Into the CI/CD Pipeline](https://github.com/IBM/automating-container-security)
-
-
+* Automate modern cloud-native security controls such as virtual patching, admission controls, security policy as code, and container network segmentation
+ple and impactful for improving security. Here’s a summary of these, followed by a pipeline reference diagram.
