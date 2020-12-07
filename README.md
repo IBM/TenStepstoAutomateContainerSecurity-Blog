@@ -3,7 +3,7 @@
 
 Many of us have seen this scene play out several times over.  Customer financial records have been exposed, account numbers have been hacked.  Security and compliance in a modern-day cloud-native is not only a requirement it is a challenge to most developers at enterprise companies.  
 
-A container is a standard unit of software that packages up code and all its dependencies so the applications run quickly and reliably from one computing environment to another.  Containers are becoming increasingly prominent, especially in cloud environments.  There are several use cases for containers such as microservices, devOps, and application migration and modernization.  The benefits of using containers is outlined in this [report](https://www.ibm.com/cloud/blog/the-benefits-of-containerization-and-what-it-means-for-you). Those benefits include:
+A container is a standard unit of software that packages up code and all its dependencies so the applications run quickly and reliably from one computing environment to another.  Containers are becoming increasingly prominent, especially in cloud environments.  There are several use cases for containers such as microservices, devOps, and application migration and modernization.  The benefits of using containers is outlined in this [IBM report](https://www.ibm.com/cloud/blog/the-benefits-of-containerization-and-what-it-means-for-you). Those benefits include:
 
 * Portability between different platforms and clouds
 
